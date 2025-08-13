@@ -23,8 +23,8 @@ Widget daily(
               columns: [
                 DataColumn(label: Text('Date')),
                 DataColumn(label: Text('Conditions')),
-                DataColumn(label: Text('Low')),
                 DataColumn(label: Text('High')),
+                DataColumn(label: Text('Low')),
                 DataColumn(label: Text('Percip %')),
               ],
               rows: List.generate(7, (index) => index).map((hourIndex) {
@@ -54,8 +54,8 @@ Widget daily(
                         ],
                       ),
                     ),
-                    DataCell(Text('${weatherRow.tempMin.round()}°')),
                     DataCell(Text('${weatherRow.tempMax.round()}°')),
+                    DataCell(Text('${weatherRow.tempMin.round()}°')),
                     DataCell(Text('${weatherRow.percipProb}%')),
                   ],
                 );

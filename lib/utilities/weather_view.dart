@@ -1,5 +1,5 @@
 enum WeatherView {
-  hourly,
+  today,
   tomorrow,
   daily,
 }

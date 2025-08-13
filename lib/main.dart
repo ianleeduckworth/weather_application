@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool _isRefreshing = false;
 
-  final Set<WeatherView> _selectedView = {WeatherView.hourly};
+  final Set<WeatherView> _selectedView = {WeatherView.today};
 
   Future<void> _refreshData() async {
     print('Refetching data');
@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: SegmentedButton<WeatherView>(
                       segments: [
                         ButtonSegment<WeatherView>(
-                          value: WeatherView.hourly,
-                          label: Text('Hourly'),
+                          value: WeatherView.today,
+                          label: Text('Today'),
                         ),
                         ButtonSegment<WeatherView>(
                           value: WeatherView.tomorrow,
@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 Expanded(
-                  child: _selectedView.contains(WeatherView.hourly)
+                  child: _selectedView.contains(WeatherView.today)
                       ? hourly(context, hourlyWeather, hourIndex)
                       : _selectedView.contains(WeatherView.tomorrow)
                       ? hourly(context, tomorrowHourlyWeather, -1)
