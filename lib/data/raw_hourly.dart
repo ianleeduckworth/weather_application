@@ -23,6 +23,7 @@ class RawHourly {
 
 class Hourly {
   final List<String> time;
+  final List<int> isDay;
   final List<double> precipitation;
   final List<int> precipitationProbability;
   final List<double> dewPoint;
@@ -31,6 +32,7 @@ class Hourly {
 
   Hourly({
     required this.time,
+    required this.isDay,
     required this.precipitation,
     required this.precipitationProbability,
     required this.dewPoint,
@@ -40,6 +42,7 @@ class Hourly {
 
   factory Hourly.fromJson(Map<String, dynamic> json) {
     final List<dynamic> rawTime = json['time'];
+    final List<dynamic> rawIsDay = json['is_day'];
     final List<dynamic> rawPrecipitation = json['precipitation'];
     final List<dynamic> rawPrecipitationProbability =
         json['precipitation_probability'];
@@ -49,6 +52,7 @@ class Hourly {
 
     return Hourly(
       time: rawTime.map((item) => item as String).toList(),
+      isDay: rawIsDay.map((item) => item as int).toList(),
       precipitation: rawPrecipitation.map((item) => item as double).toList(),
       precipitationProbability: rawPrecipitationProbability
           .map((item) => item as int)

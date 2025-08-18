@@ -25,7 +25,7 @@ Future<FetchHourlyResponse> fetchHourly(bool tomorrow) async {
 
   final response = await http.get(
     Uri.parse(
-      'https://api.open-meteo.com/v1/forecast?latitude=$latitude&longitude=$longitude&hourly=precipitation,precipitation_probability,dew_point_2m,temperature_2m,cloud_cover,snowfall,weather_code&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch&start_date=$formattedDate&end_date=$formattedDate',
+      'https://api.open-meteo.com/v1/forecast?latitude=$latitude&longitude=$longitude&timezone=auto&hourly=is_day,precipitation,precipitation_probability,dew_point_2m,temperature_2m,cloud_cover,snowfall,weather_code&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch&start_date=$formattedDate&end_date=$formattedDate',
     ),
   );
 

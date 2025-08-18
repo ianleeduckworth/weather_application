@@ -1,6 +1,7 @@
 import 'package:weather_application/utilities/get_conditions.dart';
 
 class HourlyRow {
+  final bool isDay;
   final String time;
   final WeatherCondition conditions;
   final int temp;
@@ -9,6 +10,7 @@ class HourlyRow {
   final int dewPoint;
 
   HourlyRow({
+    required this.isDay,
     required this.time,
     required this.conditions,
     required this.temp,

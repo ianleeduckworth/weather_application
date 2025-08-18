@@ -48,7 +48,7 @@ Widget hourly(
                       children: [
                         getWeatherIcon(
                           weatherRow.conditions,
-                          rowHourIndex >= 6 && rowHourIndex <= 18,
+                          weatherRow.isDay
                         ),
                         SizedBox(width: 8),
                         Text(getConditionText(weatherRow.conditions)),

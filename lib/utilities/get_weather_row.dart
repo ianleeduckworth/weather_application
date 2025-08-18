@@ -6,6 +6,7 @@ import 'package:weather_application/utilities/get_conditions.dart';
 HourlyRow getHourlyRow(RawHourly rawWeather, int hourIndex) {
   final hourly = rawWeather.hourly;
 
+  final isDay = hourly.isDay[hourIndex];
   final weatherCode = hourly.weatherCode[hourIndex];
   final time = hourly.time[hourIndex];
   final temp = hourly.temperature[hourIndex];
@@ -14,6 +15,7 @@ HourlyRow getHourlyRow(RawHourly rawWeather, int hourIndex) {
   final dewPoint = hourly.dewPoint[hourIndex];
 
   return HourlyRow(
+    isDay: isDay != 0,
     time: time,
     conditions: getConditions(weatherCode),
     temp: temp.round(),
