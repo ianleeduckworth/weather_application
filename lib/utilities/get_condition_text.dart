@@ -1,6 +1,9 @@
 import 'package:weather_application/utilities/get_conditions.dart';
 
-/// Gets a human readable value for a specific WeatherCondition enum value
+/// Gets a human readable value for a specific WeatherCondition enum value.
+///
+/// Parameters:
+///   * [weatherCondition] - The WeatherCondition enum value to convert to a human-readable string.
 String getConditionText(WeatherCondition weatherCondition) {
   switch (weatherCondition) {
     case WeatherCondition.clear:
